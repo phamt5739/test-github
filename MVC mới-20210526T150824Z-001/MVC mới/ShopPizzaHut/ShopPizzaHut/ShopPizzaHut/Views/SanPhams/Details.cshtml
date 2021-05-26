@@ -1,0 +1,30 @@
+﻿@model ShopPizzaHut.Models.EF.SanPham
+@using ShopPizzaHut.Helper
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div>
+        <div class="row align-items-center">
+
+            <div class="col-md-6 col-sm-12 order-md-last">
+                <span class="subheading">@Html.DisplayFor(model => model.MaSP)</span>
+                <h1 class="mb-4">@Html.DisplayFor(model => model.TenSP)</h1>
+
+                @*<p class="mb-4 mb-md-5">@Html.DisplayFor(model => model.ChiTietSP)</p>*@
+                <p class="mb-4 mb-md-5">@Html.Raw(Model.ChiTietSP)</p>
+                <p class="mb-3 mb-md-3 text-white">@Html.DisplayFor(model=>model.Dongia) @Html.DisplayFor(model=>model.Donvitinh)</p>
+                <p>
+                    <a href="@Url.Action("AddToCart","GioHang",new {MaSP = @Model.MaSP})" class="btn btn-primary p-3 px-xl-4 py-xl-3">
+                        Thêm vào giỏ
+                    </a>
+                    <a href="@Url.Action("Index","Home")" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Quay lại</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                @Html.Image("../../" + @Model.Image, @Model.Image, "350")
+            </div>
+        </div>
+    </div>
+</div>

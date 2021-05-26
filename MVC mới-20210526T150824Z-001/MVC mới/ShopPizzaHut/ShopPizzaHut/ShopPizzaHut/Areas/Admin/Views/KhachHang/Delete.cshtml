@@ -1,0 +1,68 @@
+﻿@model ShopPizzaHut.Models.EF.KhachHang
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+<div>
+    <h4>Khách hàng</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên Loại Khách Hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiKhachHang.TenLoaiKH)
+        </dd>
+
+        <dt>
+            Tên Khách Hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenKH)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            Số điện thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienThoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <p>
+                <input type="submit" value="Xóa" class="btn btn-default" style="background:#4e73df; color:white;" />
+            </p>
+            <p>
+                @Html.ActionLink("Trở lại trang trước", "Index")
+            </p>
+        </div>
+    }
+</div>

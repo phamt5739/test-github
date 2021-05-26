@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ShopPizzaHut.Models.EF.HoaDon>
+
+@{
+    ViewBag.Title = "Quản lý hóa đơn";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quản lý hóa đơn</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-default" style="background:#4e73df; color:white;">Thêm mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã hóa đơn
+        </th>
+
+        <th>
+            Ngày lậy hóa đơn
+        </th>
+        <th>
+            Ngày giao hàng
+        </th>
+        <th>
+            Tên khách hàng
+        </th>
+        <th>
+            Tên nhân viên
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Index","CTHD",new {MaHD=item.MaHD})">
+                    @Html.DisplayFor(modelItem => item.MaHD)
+                </a>
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayLapHD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhachHang.TenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhanVien.TenNV)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.MaHD })" class="btn btn-default" style="background:#4e73df; color:white;">Sửa</a>
+                <a href="@Url.Action("Index","CTHD",new {MaHD=item.MaHD})" class="btn btn-default" style="background:#4e73df; color:white;">Chi tiết</a>
+            </td>
+        </tr>
+    }
+
+</table>

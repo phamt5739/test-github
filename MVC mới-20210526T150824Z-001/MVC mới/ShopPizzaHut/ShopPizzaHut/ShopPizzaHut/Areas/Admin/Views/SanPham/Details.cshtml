@@ -1,0 +1,70 @@
+﻿@model ShopPizzaHut.Models.EF.SanPham
+@using ShopPizzaHut.Helper
+@{
+    ViewBag.Title = "Chi tiết";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Sản phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên loại sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiSP.TenLoaiSP)
+        </dd>
+
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            Chi tiết sản phẩm
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.ChiTietSP)
+        </dd>
+        <dt>
+            Đơn giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dongia)
+        </dd>
+        <dt>
+            Đơn vị tính
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donvitinh)
+        </dd>
+
+
+
+        <dt>
+            Hình ảnh
+        </dt>
+
+        <dd>
+            @Html.Image(Model.Image, "", "200")
+            <br />
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit", new { id = Model.MaSP })" class="btn btn-default" style="background:#4e73df; color:white;">Sửa</a>
+    <br />
+    @Html.ActionLink("Trở lại trang trước", "Index")
+</p>

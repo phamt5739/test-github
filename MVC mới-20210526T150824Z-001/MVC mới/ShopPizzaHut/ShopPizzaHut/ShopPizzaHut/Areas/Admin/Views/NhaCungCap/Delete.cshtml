@@ -1,0 +1,48 @@
+﻿@model ShopPizzaHut.Models.EF.NhaCungCap
+
+@{
+    ViewBag.Title = "Xóa";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<div>
+    <h4>Nhà cung cấp </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên nhà cung cấp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNhaCC)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiNhaCC)
+        </dd>
+
+        <dt>
+            Số điện thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienThoaiNhaCC)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default"  style="background:#4e73df; color:white;"/><br />
+            @Html.ActionLink("Trở lại trang trước", "Index")
+        </div>
+    }
+</div>

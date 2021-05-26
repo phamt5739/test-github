@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ShopPizzaHut.Models.EF.ChucVuNhanVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quản lý chức vụ nhân viên</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-default" style="background:#4e73df; color:white;">Thêm mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên chức vụ
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenChucVu)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", new { id = item.MaChucVu })" class="btn btn-default" style="background:#4e73df; color:white;">Sửa</a>
+            <a href="@Url.Action("Delete", new { id = item.MaChucVu })" class="btn btn-default" style="background:#4e73df; color:white;">Xóa</a>
+        </td>
+    </tr>
+}
+
+</table>

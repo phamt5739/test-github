@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ShopPizzaHut.Models.EF.User>
+
+@{
+    ViewBag.Title = "Quản lý tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quản lí tài khoản</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-default" style="background:#4e73df; color:white;">Thêm mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            Tên chủ tài khoản
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            Điện thoại
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a href="@Url.Action( "Edit", new { id = item.ID })" class="btn btn-default" style="background:#4e73df; color:white;">Sửa</a>
+                <a href="@Url.Action( "Details", new { id = item.ID })" class="btn btn-default" style="background:#4e73df; color:white;">Chi tiết</a>
+                <a href="@Url.Action( "Delete", new { id = item.ID })" class="btn btn-default" style="background:#4e73df; color:white;">Xóa</a>
+            </td>
+        </tr>
+    }
+
+</table>

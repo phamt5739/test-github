@@ -1,0 +1,301 @@
+﻿@model IEnumerable<ShopPizzaHut.Models.EF.SanPham>
+@using ShopPizzaHut.Models.EF;
+@using System.Linq;
+@using ShopPizzaHut.Helper;
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="home-slider owl-carousel img" style="background-image: url(/Content/client/images/bg_1.jpg);">
+    <div class="slider-item">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text align-items-center" data-scrollax-parent="true">
+
+                <div class="col-md-6 col-sm-12 ftco-animate">
+                    <span class="subheading">Delicious</span>
+                    <h1 style="font-size:60px;" class="mb-4">Pizza hải sản</h1>
+                    <p><a href="/SanPhams" class="btn btn-primary p-3 px-xl-4 py-xl-3">Bắt đầu đặt hàng</a></p>
+                </div>
+                <div class="col-md-6 ftco-animate">
+                    <img src="/Content/client/images/bg_1.png" class="img-fluid" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text align-items-center" data-scrollax-parent="true">
+
+                <div class="col-md-6 col-sm-12 order-md-last ftco-animate">
+                    <span class="subheading">Crunchy</span>
+                    <h1 style="font-size:60px;" class="mb-4">Pizza rau củ</h1>
+                    <p><a href="/SanPhams" class="btn btn-primary p-3 px-xl-4 py-xl-3">Bắt đầu đặt hàng</a></p>
+                </div>
+                <div class="col-md-6 ftco-animate">
+                    <img src="/Content/client/images/bg_2.png" class="img-fluid" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item" style="background-image: url(/Content/client/images/bg_3.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                    <span class="subheading">Welcome</span>
+                    <h1 class="mb-4">Chúng tôi nấu Pizza theo mong muốn của bạn</h1>
+                    <p><a href="/SanPhams" class="btn btn-primary p-3 px-xl-4 py-xl-3">Bắt đầu đặt hàng</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-intro">
+    <div class="container-wrap">
+        <div class="wrap d-md-flex">
+            <div class="info">
+                <div class="row no-gutters">
+                    <div class="col-md-4 d-flex">
+                        <div class="icon"><span class="icon-phone"></span></div>
+                        <div class="text">
+                            <h3>1900 1822</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex">
+                        <div class="icon"><span class="icon-my_location"></span></div>
+                        <div class="text">
+                            <h3>28 Xuân La -</br> Tây Hồ - Hà Nội</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex">
+                        <div class="icon"><span class="icon-clock-o"></span></div>
+                        <div class="text">
+                            <h3>Từ Thứ hai đến Thứ bảy</h3>
+                            <p>10:00 - 22:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-md-flex pl-md-5 p-4 align-items-center">
+                <ul class="social-icon">
+                    <li><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-about d-md-flex">
+    <div class="one-half img" style="background-image: url(/Content/client/images/about.jpg);"></div>
+    <div class="one-half">
+        <div class="heading-section ">
+            <h2 class="mb-4">Chào mừng đến với <span>Pizza Hut</span></h2>
+        </div>
+        <div>
+            <p>
+                Pizza Hut (Hay còn được biết đến với tên gọi Pizza Hut, Inc.) Là một chuỗi nhà hàng của Mỹ được nhượng quyền thương mại quốc tế chuyên cung cấp các món ăn từ bánh pizza với các phong cách khác nhau, cùng với các món ăn phụ bao gồm mì ống, đùi bò, breadsticks, và bánh mì bơ tỏi. Pizza Hut là một công ty con của Yum! Brands, (công ty kinh doanh nhà hàng lớn nhất thế giới).
+            </p>
+            <p>
+                Theo trang web của công ty, có hơn 6.000 nhà hàng Pizza Hut tại Hoa Kỳ, và hơn 16000 địa điểm cửa hàng ở hơn 100 quốc gia và vùng lãnh thổ khác trên thế giới. Vào đêm khai trương họ đã phát bánh pizza miễn phí để khuyến khích và quảng cáo.
+            </p>
+            <p>
+                Ngày nay, Pizza Hut là một thương hiệu nhượng quyền thương mại thuộc tập đoàn Yum! Brands.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-services">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center">
+                <h2 class="mb-4">Dịch vụ của chúng tôi</h2>
+                <p>Theo đuổi phương châm “Pizza và hơn thế nữa” đã đưa thương hiệu đạt đến thành công ngày hôm nay.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="media d-block text-center block-6 services">
+                    <div class="icon d-flex justify-content-center align-items-center mb-5" style="cursor:pointer">
+                        <span class="flaticon-diet" style="cursor:pointer"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Healthy Food</h3>
+                        <p>Giúp cơ thể đào thải mỡ thừa, giảm cân tự nhiên mà vẫn đảm bảo đủ chất dinh dưỡng cho cơ thể, giúp cơ thể vẫn có năng lượng để hoạt động.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="media d-block text-center block-6 services">
+                    <div class="icon d-flex justify-content-center align-items-center mb-5" style="cursor:pointer">
+                        <span class="flaticon-bicycle" style="cursor:pointer"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Fastest Delivery</h3>
+                        <p>Thời gian giao hàng cực nhanh, nhận hàng tận nơi và giao hàng tận tay.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="media d-block text-center block-6 services">
+                    <div class="icon d-flex justify-content-center align-items-center mb-5" style="cursor:pointer">
+                        <span class="flaticon-pizza-1"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Original Recipes</h3>
+                        <p>Công thức nấu ăn nguyên bản, được sử dụng rộng rãi  tại nhiều quốc gia trên khắp thế giới</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-gallery">
+    <div class="container-wrap">
+        <div class="row no-gutters">
+            <div class="col-md-3">
+                <a href="/AboutUs" class="gallery img d-flex align-items-center" style="background-image: url(/Content/client/images/gallery-1.jpg);">
+                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                        <span class="icon-search"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="/AboutUs" class="gallery img d-flex align-items-center" style="background-image: url(/Content/client/images/gallery-2.jpg);">
+                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                        <span class="icon-search"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="/AboutUs" class="gallery img d-flex align-items-center" style="background-image: url(/Content/client/images/gallery-3.jpg);">
+                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                        <span class="icon-search"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="/AboutUs" class="gallery img d-flex align-items-center" style="background-image: url(/Content/client/images/gallery-4.jpg);">
+                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                        <span class="icon-search"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-menu">
+    <div class="container-fluid">
+        <div class="row d-md-flex">
+            <div class="col-lg-4 img f-menu-img mb-5 mb-md-0" style="background-image: url(/Content/client/images/about.jpg);">
+            </div>
+            <div class="col-lg-8 p-md-5">
+                <div class="row">
+                    <div class="col-md-12 nav-link-wrap mb-5">
+                        <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Pizza</a>
+
+                            <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Mì ý</a>
+
+                            <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Cơm</a>
+
+                            <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Khai vị</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 d-flex align-items-center">
+
+                        <div class="tab-content" id="v-pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+                                <div class="row">
+                                    @foreach (var item in Model.Where(m => m.MaLoaiSP == 1).OrderBy(m => m.MaLoaiSP).Take(3))
+                                    {
+                                        <div class="col-md-4 text-center">
+                                            <div class="menu-wrap">
+                                                <a href="@Url.Action("Details","SanPhams",new {id=item.MaSP})" class="menu-img mb-4" style="background-image: url(@Url.Content(item.Image));background-size:contain;background-repeat:no-repeat;margin-top:50px;"></a>
+                                                <div class="text">
+                                                    <h3><a href="#">@Html.DisplayFor(Modelitem => item.TenSP)</a></h3>
+                                                    <p class="price"><span>@Html.DisplayFor(Modelitem => item.Dongia) @Html.DisplayFor(Modelitem => item.Donvitinh)</span></p>
+                                                    <p><a href="@Url.Action("AddToCart","GioHang",new {MaSP=item.MaSP })" class="btn btn-white btn-outline-white">Thêm vào giỏ hàng</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+                                <div class="row">
+                                    @foreach (var item in Model.Where(m => m.MaLoaiSP == 2).OrderBy(m => m.MaLoaiSP).Take(3))
+                                    {
+                                        <div class="col-md-4 text-center">
+                                            <div class="menu-wrap">
+                                                <a href="@Url.Action("Details","SanPhams",new {id=item.MaSP})" class="menu-img mb-4" style="background-image: url(@Url.Content(item.Image));background-size:contain;background-repeat:no-repeat;margin-top:50px;"></a>
+                                                <div class="text">
+                                                    <h3><a href="#">@Html.DisplayFor(Modelitem => item.TenSP)</a></h3>
+                                                    <p class="price"><span>@Html.DisplayFor(Modelitem => item.Dongia) @Html.DisplayFor(Modelitem => item.Donvitinh)</span></p>
+                                                    <p><a href="@Url.Action("AddToCart","GioHang",new {MaSP=item.MaSP })" class="btn btn-white btn-outline-white">Thêm vào giỏ hàng</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
+                                <div class="row">
+                                    @foreach (var item in Model.Where(m => m.MaLoaiSP == 3).OrderBy(m => m.MaLoaiSP).Take(3))
+                                    {
+                                        <div class="col-md-4 text-center">
+                                            <div class="menu-wrap">
+                                                <a href="@Url.Action("Details","SanPhams",new {id=item.MaSP})" class="menu-img mb-4" style="background-image: url(@Url.Content(item.Image));background-size:contain;background-repeat:no-repeat;margin-top:50px;"></a>
+                                                <div class="text">
+                                                    <h3><a href="#">@Html.DisplayFor(Modelitem => item.TenSP)</a></h3>
+                                                    <p class="price"><span>@Html.DisplayFor(Modelitem => item.Dongia) @Html.DisplayFor(Modelitem => item.Donvitinh)</span></p>
+                                                    <p><a href="@Url.Action("AddToCart","GioHang",new {MaSP=item.MaSP })" class="btn btn-white btn-outline-white">Thêm vào giỏ hàng</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab">
+                                <div class="row">
+                                    @foreach (var item in Model.Where(m => m.MaLoaiSP == 4).OrderBy(m => m.MaLoaiSP).Take(3))
+                                    {
+                                        <div class="col-md-4 text-center">
+                                            <div class="menu-wrap">
+                                                <a href="@Url.Action("Details","SanPhams",new {id=item.MaSP})" class="menu-img mb-4" style="background-image: url(@Url.Content(item.Image));background-size:contain;background-repeat:no-repeat;margin-top:50px;"></a>
+                                                <div class="text">
+                                                    <h3><a href="#">@Html.DisplayFor(Modelitem => item.TenSP)</a></h3>
+                                                    <p class="price"><span>@Html.DisplayFor(Modelitem => item.Dongia) @Html.DisplayFor(Modelitem => item.Donvitinh)</span></p>
+                                                    <p><a href="@Url.Action("AddToCart","GioHang",new {MaSP=item.MaSP })" class="btn btn-white btn-outline-white">Thêm vào giỏ hàng</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

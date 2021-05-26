@@ -1,0 +1,80 @@
+﻿@model List<ShopPizzaHut.Models.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-top:50px;margin-left:50px;">Giỏ hàng</h1>
+@if (Model == null)
+{
+    <p class="text-info text-center">
+        Chưa có sản phẩm nào trong giỏ hàng
+    </p>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <tr>
+                    <th>Mã hàng</th>
+                    <th>Tên hàng</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>Thành tiền</th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">@item.MaSP</td>
+                        <td><a target="_blank" href="@Url.Action("Details","SanPhams",new {id=item.MaSP})">@item.TenSP</a></td>
+                        <td>
+                            <form action="@Url.Action("Update")" method="get">
+                                <input type="hidden" name="MaSP" value="@item.MaSP" />
+                                <input type="number" min="1" name="txtSoLuong" value="@item.SoLuong" style="width:100px;" />
+                                <button type="submit" class="btn btn-success">Cập nhật</button>
+                            </form>
+                        </td>
+                        <td>@item.DonGia.ToString() vnđ</td>
+                        <td>@item.ThanhTien.ToString() vnđ</td>
+                        <td>
+                            <a href="@Url.Action("DelCartItem",new { MaSP = @item.MaSP})" onclick="return confirm('Xóa sản phẩm này?');" class="btn btn-danger btn-sm">Xóa</a>
+                        </td>
+                    </tr>
+                }
+                <tr style="color:white;">
+                    <td></td>
+                    <td class="text-center">Tổng số lượng</td>
+                    <td>@Model.Sum(m=>m.SoLuong)</td>
+                    <td class="text-center">Tổng thành tiền</td>
+                    <td>@Model.Sum(m=>m.ThanhTien) vnđ</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="text-center">
+                        <form action="@Url.Action("SendMailToUser","Giohang")" method="get">
+                            <a>Thông tin đặt hàng - Email: </a> <input type="email" name="Email"/>
+                            <input type="submit" value="Đặt hàng" onclick="SendEmail()" class="btn btn-success btn-sm" />
+                            <a class="btn btn-success btn-sm" href="@Url.Action("Index","SanPhams")">
+                                Tiếp tục mua hàng
+                            </a>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        var SendEmail = function () {
+            $.ajax({
+                type: "Post",
+                url: "/Giohang/SendMailToUser",
+                success: function (data) {
+                    alert("Thành công");
+                    window.location = "/Home";
+                }
+            })
+        }
+    </script>
+}

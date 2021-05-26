@@ -1,0 +1,35 @@
+﻿@model ShopPizzaHut.Models.EF.LoaiKhachHang
+
+@{
+    ViewBag.Title = "Xóa";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<div>
+    <h4>Loại khách hàng</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên loại khách hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLoaiKH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <p>
+            <input type="submit" value="Xóa" class="btn btn-default" style="background:#4e73df; color:white;" />
+            </p>
+            @Html.ActionLink("Trở lại trang trước", "Index")
+        </div>
+    }
+</div>

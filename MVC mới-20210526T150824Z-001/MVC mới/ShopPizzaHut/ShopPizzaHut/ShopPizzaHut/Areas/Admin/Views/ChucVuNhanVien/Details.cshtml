@@ -1,0 +1,29 @@
+﻿@model ShopPizzaHut.Models.EF.ChucVuNhanVien
+
+@{
+    ViewBag.Title = "Chi tiết";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Chức vụ nhân viên</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên chức vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenChucVu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit", new { id = Model.MaChucVu })" class="btn btn-default" style="background:#4e73df; color:white;">Sửa</a>
+</p>
+<p>
+    @Html.ActionLink("Trở lại trang trước", "Index")
+</p>

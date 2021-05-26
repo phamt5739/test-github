@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ShopPizzaHut.Models.EF.SanPham>
+@using ShopPizzaHut.Models.EF;
+@using System.Linq;
+@using ShopPizzaHut.Helper;
+@{
+    ViewBag.Title = "Sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-wrap">
+    <div class="row no-gutters d-flex">
+        @foreach (var item in Model.OrderBy(m=>m.MaLoaiSP))
+        {
+            <div class="col-lg-4 d-flex">
+                <div class="services-wrap d-flex">
+                    <a href="@Url.Action("Details","SanPhams",new {id=item.MaSP})" class="img">@Html.Image("../" + item.Image, "alt", "170")</a>
+                    <div class="text p-4">
+                        <h3>@Html.DisplayFor(modelItem => item.TenSP)</h3>
+                        <a class="btn-outline-info" href="@Url.Action("Details","SanPhams",new {id=item.MaSP})">Xem chi tiết</a>
+                        <p class="price"><span>@Html.DisplayFor(modelItem => item.Dongia)</span><span>@Html.DisplayFor(modelItem => item.Donvitinh)</span></p>
+                        <p> <a href="@Url.Action("AddToCart","GioHang",new {MaSP=item.MaSP })" class="ml-2 btn btn-white btn-outline-white">Thêm vào giỏ hàng</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
